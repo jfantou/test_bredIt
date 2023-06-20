@@ -1,7 +1,3 @@
-import org.jetbrains.annotations.Nullable;
-
-import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
@@ -13,31 +9,16 @@ public class Main {
         // Press Opt+Enter with your caret at the highlighted text to see how
         // IntelliJ IDEA suggests fixing it.
 
-        List<Product> nonIphoneList = nonIPhoneProducts(getProducts());
-        System.out.println(nonIphoneList.toString());
-        System.out.println("-----------------------------------------");
-        List<Product> sixPointOneInchesScreenSizeList = sixPointOneInchesScreenSizeProducts(getProducts());
-        System.out.println(sixPointOneInchesScreenSizeList.toString());
-        System.out.println("-----------------------------------------");
-        double avg = sixPointOneInchesScreenSizeIPhoneAveragePriceExcludingDiscount(getProducts());
-        System.out.println(avg);
-        System.out.println("-----------------------------------------");
-        double avgDiscount = sixPointOneInchesScreenSizeIPhoneAveragePriceIncludingDiscount(getProducts());
-        System.out.println(avgDiscount);
-        System.out.println("-----------------------------------------");
-        Product productWithMaxDiscountInDollars = productWithMaxDiscountInDollars(getProducts());
-        System.out.println(productWithMaxDiscountInDollars.toString());
-        System.out.println("-----------------------------------------");
-        Map<String, List<String>> groupByColourMap = groupByColour(getProducts());
-        System.out.println(groupByColourMap.toString());
-        System.out.println("-----------------------------------------");
-        System.out.println("-----------------------------------------");
-        System.out.println("-----------------------------------------");
-
         List<String> listValue = Arrays.asList("a", "b", "c", "d");
-        String html = process(listValue, 2);
+        Tabletest table = new Tabletest();
+        String html = table.process(listValue, 2);
         System.out.println(html);
 
+        AppleTest appletest = new AppleTest();
+        System.out.println(appletest.process(10, 2,1));
+        System.out.println(appletest.process(10, 2,2));
+        System.out.println(appletest.process(10, 2,5));
+        System.out.println(appletest.process(20, 3,3));
 
     }
 

@@ -9,7 +9,7 @@ public class Main {
         // Press Opt+Enter with your caret at the highlighted text to see how
         // IntelliJ IDEA suggests fixing it.
 
-        List<String> listValue = Arrays.asList("a", "b", "c", "d");
+        List<String> listValue = Arrays.asList("a", "b", "c", "d", "e");
         Tabletest table = new Tabletest();
         String html = table.process(listValue, 2);
         System.out.println(html);
@@ -22,26 +22,7 @@ public class Main {
 
     }
 
-    public static String process(List<String> list, int col){
-        StringBuilder tableHtml = new StringBuilder();
-        tableHtml.append("<table>");
-        final AtomicInteger counter = new AtomicInteger();
 
-        final Collection<List<String>> valuesByLine = list.stream()
-                .collect(Collectors.groupingBy(it -> counter.getAndIncrement() / col))
-                .values();
-
-        valuesByLine.stream()
-                .forEach(line -> createLine(line, tableHtml));
-
-        return tableHtml.append("<table>").toString();
-    }
-
-    private static void createLine(List<String> listValueOfLine, StringBuilder html){
-        html.append("<tr>");
-        listValueOfLine.stream().forEach(valueLine -> html.append("<td>").append(valueLine).append("</td>"));
-        html.append("</tr>");
-    }
 
     public static Map<String, List<String>> groupByColour(List<Product> products) {
         // TODO return products which don't contain a word iphone
